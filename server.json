@@ -1,0 +1,46 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.walma-labs/shopify-mcp",
+  "description": "Read-only Shopify Admin MCP server for one store: shop, products, orders, ShopifyQL analytics and any read query.",
+  "repository": {
+    "url": "https://github.com/Walma-Labs/shopify-mcp",
+    "source": "github"
+  },
+  "version": "0.2.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@walma-labs/shopify-mcp",
+      "version": "0.2.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "SHOPIFY_STORE_DOMAIN",
+          "description": "The store, e.g. example.myshopify.com",
+          "isRequired": true,
+          "isSecret": false
+        },
+        {
+          "name": "SHOPIFY_CLIENT_ID",
+          "description": "Client ID of a Dev Dashboard app installed on the store (with SHOPIFY_CLIENT_SECRET)",
+          "isRequired": false,
+          "isSecret": false
+        },
+        {
+          "name": "SHOPIFY_CLIENT_SECRET",
+          "description": "Client secret of that app",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "SHOPIFY_ACCESS_TOKEN",
+          "description": "Admin API access token of a custom app created in the store admin (alternative to the client credentials)",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
